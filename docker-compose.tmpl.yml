@@ -299,6 +299,11 @@ services:
       RECORDING_ADAPTER: bbb-webrtc-recorder
       RECORD_WEBCAMS: "true"
       KURENTO: '[]' 
+
+      # avoid logging to a file
+      LOG_FILENAME: /dev/stdout
+      LOG_STDOUT_ENABLED: false
+
       # TODO: add mediasoup IPv6
       # TODO: can listen to 0.0.0.0 for nat support? https://github.com/versatica/mediasoup/issues/487
     {{ if .Env.EXTERNAL_IPv6 }}
@@ -309,8 +314,6 @@ services:
       MS_RTP_LISTEN_IP: '{"ip":"0.0.0.0", "announcedIp":"${EXTERNAL_IPv4}"}'
     volumes:
       - ./data/mediasoup:/var/mediasoup
-    tmpfs:
-      - /var/log/bbb-webrtc-sfu
     network_mode: host
 
   fsesl-akka:
