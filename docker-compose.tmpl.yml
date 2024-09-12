@@ -190,7 +190,7 @@ services:
       ETHERPAD_API_KEY: ${ETHERPAD_API_KEY}
     networks:
       bbb-net:
-        ipv4_address: 10.7.7.4
+        ipv4_address: 164.30.20.112
 
   bbb-pads:
     build: 
@@ -260,7 +260,7 @@ services:
       - kurento
     environment:
       CLIENT_HOST: 10.7.7.1
-      REDIS_HOST: 10.7.7.5
+      REDIS_HOST: 164.30.20.112
       FREESWITCH_IP: 10.7.7.1
       FREESWITCH_SIP_IP: ${EXTERNAL_IPv4}
       MCS_HOST: 0.0.0.0
@@ -504,7 +504,7 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     networks:
       bbb-net:
-        ipv4_address: 10.7.7.22
+        ipv4_address: 164.30.20.112
 {{end}}
 
 {{ if isTrue .Env.ENABLE_PROMETHEUS_EXPORTER }}
