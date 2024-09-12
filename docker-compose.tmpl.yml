@@ -190,7 +190,7 @@ services:
       ETHERPAD_API_KEY: ${ETHERPAD_API_KEY}
     networks:
       bbb-net:
-        ipv4_address: 164.30.20.112
+        ipv4_address: 10.7.7.4
 
   bbb-pads:
     build: 
